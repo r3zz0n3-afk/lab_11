@@ -10,6 +10,11 @@ repositories {
     mavenCentral()
 }
 
+application {
+    // The following allows to run with: ./gradlew -PmainClass=it.unibo.oop.MyMainClass run
+    mainClass.set(project.properties["mainClass"].toString())
+}
+
 dependencies {
     // The BOM (Bill of Materials) synchronizes all the versions of Junit coherently.
     testImplementation(platform("org.junit:junit-bom:6.0.1"))
